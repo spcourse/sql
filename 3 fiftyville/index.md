@@ -16,15 +16,8 @@ How will you go about solving this mystery? The Fiftyville authorities have take
 
 ## Getting Started
 
-Here's how to download this problem into your own CS50 IDE. Log into [CS50 IDE](https://ide.cs50.io/) and then, in a terminal window, execute each of the below.
-
-* Execute `cd` to ensure that you're in `~/` (i.e., your home directory, aka `~`).
-* Execute `wget https://github.com/minprog/webprogrammeren/raw/2020/Problems/1%20Fiftyville/fiftyville.zip` to download a (compressed) ZIP file with this problem's distribution.
-* Execute `unzip fiftyville.zip` to uncompress that file.
-* Execute `rm fiftyville.zip` followed by `yes` or `y` to delete that ZIP file.
-* Execute `ls`. You should see a directory called `fiftyville`, which was inside of that ZIP file.
-* Execute `cd fiftyville` to change into that directory.
-* Execute `ls`. You should see a `fiftyville.db` file, a `log.sql` file, and an `answers.txt` file.
+* Download [fiftyville.zip](fiftyville.zip).
+* Unzip the file in your working directory.
 
 ## Specification
 
@@ -46,13 +39,13 @@ Ultimately, you should submit both your `log.sql` and `answers.txt` files.
 * You may find it helpful to start with the `crime_scene_reports` table. Start by looking for a crime scene report that matches the date and the location of the crime.
 * See [this SQL keywords reference](https://www.w3schools.com/sql/sql_ref_keywords.asp) for some SQL syntax that may be helpful!
 
-## Testing
+<!-- ## Testing
 
 Execute the below to evaluate the correctness of your code using `check50`.
 
 ```
 check50 -l minprog/webprogrammeren/checks_2020/fiftyville
-```
+``` -->
 
 ## Acknowledgements
 

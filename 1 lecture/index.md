@@ -1,6 +1,6 @@
 # SQL lecture
 
-Watch the lecture by clicking the image below. Do just take a moment to familiarize yourself with the video player. Perhaps of special interest is the ability to jump to and search for specific instructions, and the feature to quickly jump between chapters. 
+Watch the lecture of Harvard's CS50 course below by clicking the image. Do just take a moment to familiarize yourself with the video player. Perhaps of special interest is the ability to jump to and search for specific instructions, and the feature to quickly jump between chapters.
 
 [![sql lecture](http://img.youtube.com/vi/ZX2T7slE_9I/0.jpg)](https://video.cs50.io/ZX2T7slE_9I?screen=CdvPXVDd2nU&offset=-60900&start=1077 "SQL Lecture")
 
@@ -8,8 +8,7 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 
 ## Data processing
 
-* Last week, we collected a survey of [Hogwarts house](https://en.wikipedia.org/wiki/Hogwarts#Houses) preferences, and tallied the data from a CSV file with Python.
-* This week, we'll collect some more data about your favorite TV shows and their genres.
+* We'll collect some data about your favorite TV shows and their genres.
 * With hundreds of responses, we can start looking at the responses on Google Sheets, a web-based spreadsheet application, showing our data in rows and columns:\\
   ![image of Google Sheets spreadsheet with row 1 having cells "Timestamp", "title", and "genres", with row 2 having cells "10/19/2020 1:41:38", "Punisher", "Action, Adventure", and so on](sheets.png)
   * Some responses show a single genre selected, like "Comedy", while others, with multiple genres, show them in one cell still but separated by a comma, like "Crime, Drama".
@@ -18,7 +17,7 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
   * store data in rows and columns, where each additional entry is a row, and properties of each entry, like title or genre, is a column
   * decide on the **schema**, or format, of our data in advance by choosing the columns
 * A **database** is a file or program that stores data for us.
-* A CSV file is a **flat-file database** where the data for each column is separated by commas, and each row is on a new line, saved simply as a file.
+* A CSV file can be seen a **flat-file database** where the data for each column is separated by commas, and each row is on a new line, saved simply as a file.
   * If some data in a CSV contains a comma itself, then it's usually surrounded by quotes as a string to prevent confusion.
   * Formulas and calculations in spreadsheet programs are built into the programs themselves; a CSV file can only store raw, static values.
 * We'll download a CSV file with the data from the spreadsheet with "File > Download", upload it to our IDE by dragging and dropping it into our file tree, and see that it's indeed a text file with comma-separated values matching the spreadsheet's data.
@@ -49,10 +48,10 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 
         for row in reader:
             print(row["title"])
-  
+
   * Since the first row in our CSV has the names of the columns, it can be used to label each column in our data as well.
 * Now let's take a look at all the unique titles in our responses:
-    
+
     import csv
 
     titles = set()
@@ -65,7 +64,7 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 
     for title in titles:
         print(title)
-    
+
   * We'll create a set called `titles`, and add each row's title value to it. Calling `add` on a set will automatically check for duplicates and ensure that there are only unique values.
   * Then, we can iterate over the elements in the set with a `for` loop, printing each of them.
 * To sort the titles, we can just change our loop to `for title in sorted(titles)`, which will sort our set before we iterate over it.
@@ -76,7 +75,7 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 ### Counting
 
 * We can use a dictionary, instead of a set, to count the number of times we've seen each title, with the keys being the titles and the values being an integer counting the number of times we see each of them:
-  
+
     import csv
 
     titles = {}
@@ -92,30 +91,30 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 
     for title in sorted(titles):
         print(title, titles[title])
-    
+
   * Here, we first check if we've haven't seen the title before (if it's `not in titles`). We set the initial value to 0 if that's the case, and then we can safely increment the value by 1 every time.
   * Finally, we can print out our dictionary's keys and values by passing them as arguments to `print`, which will separate them by a space for us.
 * We can sort by the values in the dictionary by changing our loop to:
-  
+
     ...
     def f(title):
         return titles[title]
 
     for title in sorted(titles, key=f, reverse=True):
     ...
-    
+
   * We define a function, `f`, which just returns the count of a title in the dictionary with `titles[title]`. The `sorted` function, in turn, will use that function as the **key** to sort the dictionary's elements. And we'll also pass in `reverse=True` to sort from largest to smallest, instead of smallest to largest.
   * So now we'll see the most popular shows printed.
 * We can actually define our function in the same line, with this syntax:
-  
+
     for title in sorted(titles, key=lambda title: titles[title], reverse=True):
-  
+
   * We pass in a **lambda**, or anonymous function, which has no name but takes in some argument or arguments, and returns a value immediately.
 
 ### Searching
 
 * We can write a program to search for a title and report its popularity:
-  
+
     import csv
 
     title = input("Title: ").strip().upper()
@@ -141,13 +140,13 @@ Watch the lecture by clicking the image below. Do just take a moment to familiar
 * We'll use a common database program called **SQLite**, one of many available programs that support SQL. Other database programs include Oracle Database, MySQL, PostgreSQL, and Microsoft Access.
 * SQLite stores our data in a binary file, with 0s and 1s that represent data efficiently. We'll interact with our tables of data through a command-line program, `sqlite3`.
 * We'll run some commands in the CS50 IDE to import our CSV file into a table called "shows":
-  
+
     ~/ $ sqlite3
     SQLite version 3.22.0 2018-01-22 18:45:57
     Enter ".help" for usage hints.
     sqlite> .mode csv
     sqlite> .import 'Favorite TV Shows (Responses) - Form Responses 1.csv' shows
-    
+
   * Based on the rows in the CSV file, SQLite will create a table in our database with the data and columns.
   * We'll set SQLite to CSV mode, and use the `.import` command to create a table from our file.
 * It turns out that, when working with data, we generally need four types of operations supported by relational databases:
