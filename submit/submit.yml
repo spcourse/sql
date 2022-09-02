@@ -1,4 +1,4 @@
-name: movies
+name: databases
 files:
     required:
         - 1.sql
@@ -14,6 +14,11 @@ files:
         - 11.sql
         - 12.sql
         - 13.sql
-check:
-    tool: check50
-    slug: minprog/webprogrammeren/checks_2020/movies
+        - log.sql
+        - answers.txt
+# check:
+#     tool: check50
+#     slug: minprog/webprogrammeren/checks_2020/movies
+# check:
+#     tool: check50
+#     slug: minprog/webprogrammeren/checks_2020/fiftyville
