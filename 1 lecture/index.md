@@ -96,18 +96,17 @@ Watch the lecture of Harvard's CS50 course below by clicking the image. Do just 
   * Finally, we can print out our dictionary's keys and values by passing them as arguments to `print`, which will separate them by a space for us.
 * We can sort by the values in the dictionary by changing our loop to:
 
-    ...
     def f(title):
         return titles[title]
 
     for title in sorted(titles, key=f, reverse=True):
-    ...
 
   * We define a function, `f`, which just returns the count of a title in the dictionary with `titles[title]`. The `sorted` function, in turn, will use that function as the **key** to sort the dictionary's elements. And we'll also pass in `reverse=True` to sort from largest to smallest, instead of smallest to largest.
   * So now we'll see the most popular shows printed.
 * We can actually define our function in the same line, with this syntax:
 
     for title in sorted(titles, key=lambda title: titles[title], reverse=True):
+    
 
   * We pass in a **lambda**, or anonymous function, which has no name but takes in some argument or arguments, and returns a value immediately.
 
