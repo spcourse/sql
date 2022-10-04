@@ -473,3 +473,8 @@ Watch the lecture of Harvard's CS50 course below by clicking the image. Do just 
   * The database will ensure that all the queries in between are executed together.
 * Another example might be of two roommates and a shared fridge in their dorm. The first roommate comes home, and sees that there is no milk in the fridge. So the first roommate leaves to the store to buy milk, and while they are at the store, the second roommate comes home, sees that there is no milk, and leaves for another store to get milk as well. Later, there will be two jugs of milk in the fridge.
 * We can solve this problem by locking the fridge so that our roommate can't check whether there is milk until we've gotten back.
+
+
+## Acknowledgements
+
+Original material from Harvard's [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0)

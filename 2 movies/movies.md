@@ -114,15 +114,9 @@ If you're using the `movies.db` database provided in this problem set's distribu
 
 Note that row counts do not include header rows that only show column names.
 
-Execute the below to evaluate the correctness of your code using `check50`.
-
-> Note: in order to reduce runtime, the checks use a smaller database with much fewer entries. You should test your queries yourself by the metrics above before running the checks. The checks serve only as a final check of correctness, they are not suitable for debugging in this case.
-
-```
-check50 -l minprog/webprogrammeren/checks_2020/movies
-```
-
 ## Acknowledgements
+
+Original assignment from Harvard's [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0)
 
 Information courtesy of
 IMDb

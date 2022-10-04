@@ -49,4 +49,6 @@ check50 -l minprog/webprogrammeren/checks_2020/fiftyville
 
 ## Acknowledgements
 
+Original assignment from Harvard's [CS50](https://pll.harvard.edu/course/cs50-introduction-computer-science?delta=0)
+
 Inspired by another case over at [SQL City](http://mystery.knightlab.com/).
