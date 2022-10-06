@@ -16,9 +16,3 @@ files:
         - 13.sql
         - log.sql
         - answers.txt
-# check:
-#     tool: check50
-#     slug: minprog/webprogrammeren/checks_2020/movies
-# check:
-#     tool: check50
-#     slug: minprog/webprogrammeren/checks_2020/fiftyville
