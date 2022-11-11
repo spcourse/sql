@@ -78,6 +78,8 @@ To test your queries on CS50 IDE, you can query the database by running
 $ cat filename.sql | sqlite3 movies.db
 ```
 
+_On Windows, replace `sqlite3` with `sqlite3.exe`!_
+
 where `filename.sql` is the file containing your SQL query.
 
 You can also run
