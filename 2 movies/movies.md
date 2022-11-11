@@ -72,7 +72,7 @@ You're welcome to check your queries' results against [IMDb](https://www.imdb.co
 
 ## Usage
 
-To test your queries on CS50 IDE, you can query the database by running
+To test your queries, you can query the database by running
 
 ```
 $ cat filename.sql | sqlite3 movies.db
