@@ -61,6 +61,7 @@ You're welcome to check your queries' results against [IMDb](https://www.imdb.co
     * Your query should output a table with a single column for the title of each movie.
     * You may assume that there is only one person in the database with the name Johnny Depp.
     * You may assume that there is only one person in the database with the name Helena Bonham Carter.
+    * **Hint:** First construct a query that contains only the movie titles in which _one_ of these actors starred. Next, construct a query that contains all movies of the other actor, filtered on the results of the first query.
 1. In `13.sql`, write a SQL query to list the names of all people who starred in a movie in which Kevin Bacon also starred.
     * Your query should output a table with a single column for the name of each person.
     * There may be multiple people named Kevin Bacon in the database. Be sure to only select the Kevin Bacon born in 1958.
